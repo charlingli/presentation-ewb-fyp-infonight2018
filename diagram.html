@@ -15,51 +15,43 @@
   <script src="../revealjs-diagram.js"></script>
   <script>
     var treeData = {
-      name: 'You',
+      name: 'root',
       x0: window.diagram.height / 2,
       y0: 0,
       children: []
     };
-    function addEWBItems() {
-      window.diagram.addItem('Field professionals', 'EWB Australia', treeData);
-      window.diagram.addItem('Industry partners', 'EWB Australia', treeData);
-      window.diagram.addItem('Communities', 'EWB Australia', treeData);
+    // define a function to add multiple nodes
+    function addChildren() {
+      window.diagram.addItem('child 1', 'root', treeData)();
+      window.diagram.addItem('child 2', 'root', treeData)();
+      window.diagram.addItem('child 3', 'root', treeData)();
+    };
+    function removeChildren() {
+      window.diagram.removeItem('child 1', treeData)();
+      window.diagram.removeItem('child 2', treeData)();
+      window.diagram.removeItem('child 3', treeData)();
     }
-    function removeEWBItems() {
-      window.diagram.removeItem('Field professionals', 'EWB Australia', treeData);
-      window.diagram.removeItem('Industry partners', 'EWB Australia', treeData);
-      window.diagram.removeItem('Communities', 'EWB Australia', treeData);
+    // define a function to add multiple links
+    function addLinks() {
+      window.diagram.addLink('child 1', 'tail', treeData)();
+      window.diagram.addLink('child 3', 'tail', treeData)();
     }
-    function addWorkLinks() {
-      window.diagram.addItem('Other students', 'You', treeData);
-      window.diagram.addLink('Your work', 'Field professionals', treeData)();
-      window.diagram.addLink('Your work', 'Industry partners', treeData)();
-      window.diagram.addLink('Your work', 'Communities', treeData)();
-      window.diagram.addLink('Your work', 'Other students', treeData)();
-    }
-    function removeWorkLinks() {
-      window.diagram.removeItem('Other students', 'You', treeData);
-      window.diagram.removeLink('Your work', 'Field professionals', treeData)();
-      window.diagram.removeLink('Your work', 'Industry partners', treeData)();
-      window.diagram.removeLink('Your work', 'Communities', treeData)();
-      window.diagram.removeLink('Your work', 'Other students', treeData)();
+    function removeLinks() {
+      window.diagram.removeLink('child 1', 'tail', treeData)();
+      window.diagram.removeLink('child 3', 'tail', treeData)();
     }
     var _transitions = [
-      window.diagram.addItem('Your supervisor', 'You', treeData),
-      window.diagram.addItem('EWB Australia', 'You', treeData),
-      addEWBItems,
-      window.diagram.addItem('Your work', 'You', treeData),
-      addWorkLinks
+      addChildren,
+      window.diagram.addItem('tail', 'child 2', treeData),
+      addLinks
     ];
     var _inverse_transitions = [
-      window.diagram.removeItem('Your supervisor', 'You', treeData),
-      window.diagram.removeItem('EWB Australia', 'You', treeData),
-      removeEWBItems,
-      window.diagram.removeItem('Your work', 'You', treeData),
-      removeWorkLinks
+      removeChildren,
+      window.diagram.removeItem('tail', treeData),
+      removeLinks
     ];
     // start the tree
-    window.diagram.register('closed', function() {
+    window.diagram.register('combined', function() {
       window.diagram.init(treeData);
     });
   </script>
