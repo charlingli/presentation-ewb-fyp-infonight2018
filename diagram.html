@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="../revealjs-diagram.css">
 </head>
 <body>
+  The hierarchy:
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="../revealjs-diagram.js"></script>
   <script>
     var treeData = {
       name: 'You',
-      image: '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/you-diagram.svg"';
       x0: window.diagram.height / 2,
       y0: 0,
       children: []
     };
     function addEWBItems() {
-      window.diagram.addItem('Field professionals', 'EWB Australia', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/fieldprofessional-diagram.svg"');
-      window.diagram.addItem('Industry partners', 'EWB Australia', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/industry-diagram.svg"');
-      window.diagram.addItem('Communities', 'EWB Australia', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/community-diagram.svg"');
+      window.diagram.addItem('Field professionals', 'EWB Australia', treeData);
+      window.diagram.addItem('Industry partners', 'EWB Australia', treeData);
+      window.diagram.addItem('Communities', 'EWB Australia', treeData);
     }
     function removeEWBItems() {
       window.diagram.removeItem('Field professionals', 'EWB Australia', treeData);
@@ -32,7 +32,7 @@
       window.diagram.removeItem('Communities', 'EWB Australia', treeData);
     }
     function addWorkLinks() {
-      window.diagram.addItem('Other students', 'You', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/students-diagram.svg"');
+      window.diagram.addItem('Other students', 'You', treeData);
       window.diagram.addLink('Your work', 'Field professionals', treeData)();
       window.diagram.addLink('Your work', 'Industry partners', treeData)();
       window.diagram.addLink('Your work', 'Communities', treeData)();
@@ -46,10 +46,10 @@
       window.diagram.removeLink('Your work', 'Other students', treeData)();
     }
     var _transitions = [
-      window.diagram.addItem('Your supervisor', 'You', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/supervisor-diagram.svg"'),
-      window.diagram.addItem('EWB Australia', 'You', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/ewb-diagram.svg"'),
+      window.diagram.addItem('Your supervisor', 'You', treeData),
+      window.diagram.addItem('EWB Australia', 'You', treeData),
       addEWBItems,
-      window.diagram.addItem('Your work', 'You', treeData, '"https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/experiment-diagram.svg"'),
+      window.diagram.addItem('Your work', 'You', treeData),
       addWorkLinks
     ];
     var _inverse_transitions = [
