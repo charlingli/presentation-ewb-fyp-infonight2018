@@ -10,10 +10,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 body {
-  background-image: url(https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/reveal-background.png) no-repeat center bottom;
-  background-size: 100%;
   background: #fff;
   background-color: #fff; }
+
+section {
+  background-image: url(https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/reveal-background.png) no-repeat center bottom;
+  background-size: 100%; }
 
 .reveal {
   font-family: Arial, Helvetica, sans-serif;
