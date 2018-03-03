@@ -90,8 +90,6 @@
         ry: radius
       });
 
-    var image = nodeEnter.prepend('<img src="https://charlingli.github.io/presentation-ewb-fyp-infonight2018/img/you-diagram.png" />')
-
     var text = nodeEnter.append('text')
       .attr({
         'text-anchor': 'middle',
