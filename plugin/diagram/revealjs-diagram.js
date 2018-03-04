@@ -90,6 +90,8 @@
         ry: radius
       });
 
+    var image = nodeEnter.append('<img src="' + function (d) {return d.image} + '" />');
+
     var text = nodeEnter.append('text')
       .attr({
         'text-anchor': 'middle',
@@ -151,7 +153,7 @@
   }
 
   // Public methods
-  function addItem(name, parent, root) {
+  function addItem(name, parent, root, image) {
     if (!parent) {
       throw Error('You need to specify a parent to add a node in the Tree!')
     }
