@@ -9,16 +9,16 @@
   <script src="plugin/diagram/revealjs-diagram.js"></script>
   <script>
     var treeData = {
-      name: 'A',
+      name: 'You',
       x0: window.diagram.height / 2,
       y0: 0,
       children: []
     };
     var _transitions = [
-      window.diagram.addItem('B', 'A', treeData),
+      window.diagram.addItem('Your supervisor', 'You', treeData),
     ];
     var _inverse_transitions = [
-      window.diagram.removeItem('B', treeData),
+      window.diagram.removeItem('Your supervisor', treeData),
     ];
     // start the tree
     window.diagram.register('intro', function() {
