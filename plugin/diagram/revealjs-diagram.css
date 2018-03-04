@@ -2,13 +2,13 @@
   cursor: pointer; }
 
 .node rect {
-  fill: #bdb6ae;
+  fill: #8ec854;
   stroke: #009f4c;
   stroke-width: 1.5px; }
 
 .node text {
   font: 10px sans-serif;
-  fill: #fff; }
+  fill: #000; }
 
 .link, .link-alone {
   fill: none;
